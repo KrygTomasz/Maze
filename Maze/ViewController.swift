@@ -30,7 +30,9 @@ class ViewController: UIViewController {
 
     func setButtons() {
         
-        startButton.setTitle("Start Game", for: .normal)
+        startButton.setTitle("", for: .normal)
+        startButton.setImage(#imageLiteral(resourceName: "StartGame"), for: .normal)
+        startButton.tintColor = UIColor.brown
         startButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
         
     }

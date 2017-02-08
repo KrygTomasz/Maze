@@ -21,11 +21,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncD-uk-V9r">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <rect key="frame" x="112" y="303" width="150" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="j9J-iC-Zto"/>
+                                    <constraint firstAttribute="width" constant="150" id="l5B-Ev-toH"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.82602619060000004" blue="0.14182328620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ncD-uk-V9r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ll0-hk-yIe"/>
                             <constraint firstItem="ncD-uk-V9r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sji-tr-Dle"/>
