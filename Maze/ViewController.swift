@@ -32,7 +32,8 @@ class ViewController: UIViewController {
     
     func startGame() {
         
-        
+        guard let game: GameVC = UINib(nibName: "GameVC", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? GameVC else { return }
+        present(game, animated: true, completion: nil)
         
     }
 

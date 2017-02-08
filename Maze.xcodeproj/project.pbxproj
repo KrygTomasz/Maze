@@ -15,6 +15,10 @@
 		227753AF1E4B9DD6001382A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227753AD1E4B9DD6001382A6 /* LaunchScreen.storyboard */; };
 		227753BA1E4B9DD6001382A6 /* MazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753B91E4B9DD6001382A6 /* MazeTests.swift */; };
 		227753C51E4B9DD7001382A6 /* MazeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753C41E4B9DD7001382A6 /* MazeUITests.swift */; };
+		22CFB5E71E4BA7C200BBD032 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFB5E51E4BA7C200BBD032 /* GameVC.swift */; };
+		22CFB5E81E4BA7C200BBD032 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CFB5E61E4BA7C200BBD032 /* GameVC.xib */; };
+		22CFB5EA1E4BAA6700BBD032 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFB5E91E4BAA6700BBD032 /* Ball.swift */; };
+		22CFB5EC1E4BAA7400BBD032 /* Ball.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CFB5EB1E4BAA7400BBD032 /* Ball.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		227753C01E4B9DD6001382A6 /* MazeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		227753C41E4B9DD7001382A6 /* MazeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeUITests.swift; sourceTree = "<group>"; };
 		227753C61E4B9DD7001382A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CFB5E51E4BA7C200BBD032 /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		22CFB5E61E4BA7C200BBD032 /* GameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		22CFB5E91E4BAA6700BBD032 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		22CFB5EB1E4BAA7400BBD032 /* Ball.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Ball.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				227753AD1E4B9DD6001382A6 /* LaunchScreen.storyboard */,
 				227753B01E4B9DD6001382A6 /* Info.plist */,
 				227753A81E4B9DD6001382A6 /* Maze.xcdatamodeld */,
+				22CFB5E51E4BA7C200BBD032 /* GameVC.swift */,
+				22CFB5E61E4BA7C200BBD032 /* GameVC.xib */,
+				22CFB5E91E4BAA6700BBD032 /* Ball.swift */,
+				22CFB5EB1E4BAA7400BBD032 /* Ball.xib */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -239,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				227753AF1E4B9DD6001382A6 /* LaunchScreen.storyboard in Resources */,
+				22CFB5EC1E4BAA7400BBD032 /* Ball.xib in Resources */,
 				227753AC1E4B9DD6001382A6 /* Assets.xcassets in Resources */,
+				22CFB5E81E4BA7C200BBD032 /* GameVC.xib in Resources */,
 				227753A71E4B9DD6001382A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +281,8 @@
 			files = (
 				227753AA1E4B9DD6001382A6 /* Maze.xcdatamodeld in Sources */,
 				227753A41E4B9DD6001382A6 /* ViewController.swift in Sources */,
+				22CFB5EA1E4BAA6700BBD032 /* Ball.swift in Sources */,
+				22CFB5E71E4BA7C200BBD032 /* GameVC.swift in Sources */,
 				227753A21E4B9DD6001382A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

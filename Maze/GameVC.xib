@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameVC" customModule="Maze" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="N1E-VA-2Rt" customClass="GameVC" customModule="Maze" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="akk-0c-bN2"/>
+                <viewControllerLayoutGuide type="bottom" id="aw4-Hl-V6A"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="oIp-R7-ZET">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUs-D6-8qm">
+                        <rect key="frame" x="20" y="40" width="335" height="607"/>
+                        <color key="backgroundColor" red="1" green="0.82602619060000004" blue="0.14182328620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="LUs-D6-8qm" firstAttribute="leading" secondItem="oIp-R7-ZET" secondAttribute="leading" constant="20" id="1wP-dH-U3j"/>
+                    <constraint firstItem="aw4-Hl-V6A" firstAttribute="top" secondItem="LUs-D6-8qm" secondAttribute="bottom" constant="20" id="LEQ-hZ-6Pm"/>
+                    <constraint firstItem="LUs-D6-8qm" firstAttribute="top" secondItem="akk-0c-bN2" secondAttribute="bottom" constant="20" id="Q95-ZS-RMg"/>
+                    <constraint firstAttribute="trailing" secondItem="LUs-D6-8qm" secondAttribute="trailing" constant="20" id="gZq-hM-YAL"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="mainView" destination="LUs-D6-8qm" id="z2V-n4-PG5"/>
+            </connections>
+            <point key="canvasLocation" x="372" y="-217"/>
+        </viewController>
+    </objects>
+</document>
