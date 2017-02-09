@@ -20,20 +20,68 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUs-D6-8qm">
-                        <rect key="frame" x="20" y="40" width="335" height="607"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbw-Rg-I8f">
+                                <rect key="frame" x="0.0" y="627" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="blZ-rG-0hv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsO-4W-MKn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="sy7-es-pZ4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnJ-Qg-0Wo">
+                                <rect key="frame" x="0.0" y="20" width="20" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="WcJ-OL-ySj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOu-Z9-Q2G">
+                                <rect key="frame" x="355" y="20" width="20" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Efe-Ls-ci2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.82602619060000004" blue="0.14182328620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rOu-Z9-Q2G" firstAttribute="bottom" secondItem="Lbw-Rg-I8f" secondAttribute="top" id="0Gd-3o-aeL"/>
+                            <constraint firstItem="LnJ-Qg-0Wo" firstAttribute="bottom" secondItem="Lbw-Rg-I8f" secondAttribute="top" id="7XP-Xe-czd"/>
+                            <constraint firstItem="LnJ-Qg-0Wo" firstAttribute="leading" secondItem="LUs-D6-8qm" secondAttribute="leading" id="JgO-Kr-Sgx"/>
+                            <constraint firstItem="rOu-Z9-Q2G" firstAttribute="top" secondItem="UsO-4W-MKn" secondAttribute="bottom" id="MNK-t7-U8C"/>
+                            <constraint firstItem="Lbw-Rg-I8f" firstAttribute="leading" secondItem="LUs-D6-8qm" secondAttribute="leading" id="Nxa-ku-eLH"/>
+                            <constraint firstAttribute="trailing" secondItem="rOu-Z9-Q2G" secondAttribute="trailing" id="PCD-ux-Q0p"/>
+                            <constraint firstItem="UsO-4W-MKn" firstAttribute="leading" secondItem="LUs-D6-8qm" secondAttribute="leading" id="bBI-tB-9hN"/>
+                            <constraint firstItem="UsO-4W-MKn" firstAttribute="top" secondItem="LUs-D6-8qm" secondAttribute="top" id="d65-bK-hcg"/>
+                            <constraint firstItem="LnJ-Qg-0Wo" firstAttribute="top" secondItem="UsO-4W-MKn" secondAttribute="bottom" id="eh3-24-Ncs"/>
+                            <constraint firstAttribute="trailing" secondItem="Lbw-Rg-I8f" secondAttribute="trailing" id="pa8-v9-uO5"/>
+                            <constraint firstAttribute="trailing" secondItem="UsO-4W-MKn" secondAttribute="trailing" id="poq-WZ-qBk"/>
+                            <constraint firstAttribute="bottom" secondItem="Lbw-Rg-I8f" secondAttribute="bottom" id="vjB-86-ef4"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="LUs-D6-8qm" firstAttribute="leading" secondItem="oIp-R7-ZET" secondAttribute="leading" constant="20" id="1wP-dH-U3j"/>
-                    <constraint firstItem="aw4-Hl-V6A" firstAttribute="top" secondItem="LUs-D6-8qm" secondAttribute="bottom" constant="20" id="LEQ-hZ-6Pm"/>
-                    <constraint firstItem="LUs-D6-8qm" firstAttribute="top" secondItem="akk-0c-bN2" secondAttribute="bottom" constant="20" id="Q95-ZS-RMg"/>
-                    <constraint firstAttribute="trailing" secondItem="LUs-D6-8qm" secondAttribute="trailing" constant="20" id="gZq-hM-YAL"/>
+                    <constraint firstItem="LUs-D6-8qm" firstAttribute="leading" secondItem="oIp-R7-ZET" secondAttribute="leading" id="1wP-dH-U3j"/>
+                    <constraint firstItem="aw4-Hl-V6A" firstAttribute="top" secondItem="LUs-D6-8qm" secondAttribute="bottom" id="LEQ-hZ-6Pm"/>
+                    <constraint firstItem="LUs-D6-8qm" firstAttribute="top" secondItem="akk-0c-bN2" secondAttribute="bottom" id="Q95-ZS-RMg"/>
+                    <constraint firstAttribute="trailing" secondItem="LUs-D6-8qm" secondAttribute="trailing" id="gZq-hM-YAL"/>
                 </constraints>
             </view>
             <connections>
+                <outlet property="bottomWall" destination="Lbw-Rg-I8f" id="DN6-Qi-Ax8"/>
+                <outlet property="leftWall" destination="LnJ-Qg-0Wo" id="4uP-9o-sbX"/>
                 <outlet property="mainView" destination="LUs-D6-8qm" id="z2V-n4-PG5"/>
+                <outlet property="rightWall" destination="rOu-Z9-Q2G" id="Qja-jv-e1l"/>
+                <outlet property="topWall" destination="UsO-4W-MKn" id="VGG-6k-C6f"/>
             </connections>
             <point key="canvasLocation" x="372" y="-217"/>
         </viewController>

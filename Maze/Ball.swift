@@ -22,9 +22,6 @@ class Ball: UIView {
     
     func setView() {
     
-        //image.backgroundColor = UIColor.black
-        
-        //image.frame = CGRect(x: 10, y: 20, width: 100, height: 100)
         image.image = #imageLiteral(resourceName: "ball")
     
     }

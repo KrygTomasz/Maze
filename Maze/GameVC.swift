@@ -12,21 +12,34 @@ import CoreMotion
 class GameVC: UIViewController {
 
     @IBOutlet weak var mainView: UIView!
-    var ball: Ball!
+    @IBOutlet weak var bottomWall: UIView!
+    @IBOutlet weak var topWall: UIView!
+    @IBOutlet weak var leftWall: UIView!
+    @IBOutlet weak var rightWall: UIView!
     
-    var motionManager = CMMotionManager()
-    var animator: UIDynamicAnimator?
-    var gravity: UIGravityBehavior?
-    var direction = CGVector(dx: 0.0, dy: 0.0)
+    fileprivate var ball: Ball!
+    
+    fileprivate var motionManager = CMMotionManager()
+    fileprivate var animator: UIDynamicAnimator?
+    
+    fileprivate var collision: UICollisionBehavior!
+    
+    fileprivate var gravity: UIGravityBehavior!
+    fileprivate var direction = CGVector(dx: 0.0, dy: 0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initAnimator()
+        
         initBall()
+        initWalls()
         mainView.layoutIfNeeded()
 
+        createCollisions()
         createGravity()
         
-        startAccelerometer()
+        launchAccelerometer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,30 +51,59 @@ class GameVC: UIViewController {
         return true
     }
     
-    func initBall() {
+    fileprivate func initAnimator() {
+        
+        animator = UIDynamicAnimator(referenceView: mainView)
+        
+    }
+    
+    fileprivate func initBall() {
         
         guard let ballObject: Ball = UINib(nibName: "Ball", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? Ball else { return }
         self.ball = ballObject
         ball.setView()
         mainView.addSubview(ball)
         
-        //ball.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
-        //ball.leftAnchor.constraint(equalTo: mainView.leftAnchor).isActive = true
+        ball.translatesAutoresizingMaskIntoConstraints = false
+        
+        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor).isActive = true
+        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor).isActive = true
         
     }
     
-    func createGravity() {
+    fileprivate func initWalls() {
         
-        animator = UIDynamicAnimator(referenceView: mainView)
+        //let wallBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [bottomWall, topWall, leftWall, rightWall])
+        //wallBehavior.isAnchored = true
+        //wallBehavior.allowsRotation = false
+        
+        bottomWall.backgroundColor = UIColor.brown
+        topWall.backgroundColor = UIColor.brown
+        leftWall.backgroundColor = UIColor.brown
+        rightWall.backgroundColor = UIColor.brown
+        
+        //animator?.addBehavior(wallBehavior)
+        
+    }
+    
+    fileprivate func createCollisions() {
+        
+        collision = UICollisionBehavior(items: [ball, bottomWall, topWall, leftWall, rightWall])
+        collision?.translatesReferenceBoundsIntoBoundary = true
+        animator?.addBehavior(collision)
+    
+    }
+    
+    fileprivate func createGravity() {
         
         gravity = UIGravityBehavior(items: [ball])
         gravity?.gravityDirection = direction
         
-        animator?.addBehavior(gravity!)
+        animator?.addBehavior(gravity)
         
     }
     
-    func startAccelerometer() {
+    fileprivate func launchAccelerometer() {
         
         motionManager.accelerometerUpdateInterval = 0.1
         motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
