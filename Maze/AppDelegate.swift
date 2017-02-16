@@ -45,6 +45,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print("Start game shortcut tapped")
+        completionHandler(handleShortcut(shortcutItem))
+    }
+    
+    func handleShortcut(_ shortcutItem: UIApplicationShortcutItem)->Bool {
+        
+        var success = false
+        if shortcutItem.type == "kryg.maze.game-board" {
+            success = true
+        }
+        return true
+        
+    }
+    
     // MARK: - Core Data stack
 
     @available(iOS 10.0, *)
