@@ -89,6 +89,10 @@ class GameVC: UIViewController {
     fileprivate func createCollisions() {
         
         collision = UICollisionBehavior(items: [ball, bottomWall, topWall, leftWall, rightWall])
+        collision.addBoundary(withIdentifier: "bottomWall" as NSCopying, for: UIBezierPath(rect: bottomWall.frame))
+        collision.addBoundary(withIdentifier: "topWall" as NSCopying, for: UIBezierPath(rect: topWall.frame))
+        collision.addBoundary(withIdentifier: "leftWall" as NSCopying, for: UIBezierPath(rect: leftWall.frame))
+        collision.addBoundary(withIdentifier: "rightWall" as NSCopying, for: UIBezierPath(rect: rightWall.frame))
         collision?.translatesReferenceBoundsIntoBoundary = true
         animator?.addBehavior(collision)
     

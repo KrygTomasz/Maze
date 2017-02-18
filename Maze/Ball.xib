@@ -11,16 +11,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yR-Ka-D71" customClass="Ball" customModule="Maze" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RcY-zI-Tgp">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="width" constant="50" id="3bU-0Q-1lX"/>
-                <constraint firstAttribute="height" constant="50" id="6Ha-31-39B"/>
+                <constraint firstAttribute="width" constant="30" id="3bU-0Q-1lX"/>
+                <constraint firstAttribute="height" constant="30" id="6Ha-31-39B"/>
                 <constraint firstItem="RcY-zI-Tgp" firstAttribute="height" secondItem="5yR-Ka-D71" secondAttribute="height" id="8gr-DR-l0X"/>
                 <constraint firstItem="RcY-zI-Tgp" firstAttribute="width" secondItem="5yR-Ka-D71" secondAttribute="width" id="CpN-YN-nVZ"/>
                 <constraint firstItem="RcY-zI-Tgp" firstAttribute="centerY" secondItem="5yR-Ka-D71" secondAttribute="centerY" id="dLN-lq-BED"/>

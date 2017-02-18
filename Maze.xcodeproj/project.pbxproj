@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		227753A21E4B9DD6001382A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A11E4B9DD6001382A6 /* AppDelegate.swift */; };
-		227753A41E4B9DD6001382A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A31E4B9DD6001382A6 /* ViewController.swift */; };
+		227753A41E4B9DD6001382A6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A31E4B9DD6001382A6 /* MenuVC.swift */; };
 		227753A71E4B9DD6001382A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227753A51E4B9DD6001382A6 /* Main.storyboard */; };
 		227753AA1E4B9DD6001382A6 /* Maze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 227753A81E4B9DD6001382A6 /* Maze.xcdatamodeld */; };
 		227753AC1E4B9DD6001382A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227753AB1E4B9DD6001382A6 /* Assets.xcassets */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		2277539E1E4B9DD6001382A6 /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227753A11E4B9DD6001382A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		227753A31E4B9DD6001382A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		227753A31E4B9DD6001382A6 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		227753A61E4B9DD6001382A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		227753A91E4B9DD6001382A6 /* Maze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Maze.xcdatamodel; sourceTree = "<group>"; };
 		227753AB1E4B9DD6001382A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				227753A11E4B9DD6001382A6 /* AppDelegate.swift */,
-				227753A31E4B9DD6001382A6 /* ViewController.swift */,
+				227753A31E4B9DD6001382A6 /* MenuVC.swift */,
 				227753A51E4B9DD6001382A6 /* Main.storyboard */,
 				227753AB1E4B9DD6001382A6 /* Assets.xcassets */,
 				227753AD1E4B9DD6001382A6 /* LaunchScreen.storyboard */,
@@ -280,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				227753AA1E4B9DD6001382A6 /* Maze.xcdatamodeld in Sources */,
-				227753A41E4B9DD6001382A6 /* ViewController.swift in Sources */,
+				227753A41E4B9DD6001382A6 /* MenuVC.swift in Sources */,
 				22CFB5EA1E4BAA6700BBD032 /* Ball.swift in Sources */,
 				22CFB5E71E4BA7C200BBD032 /* GameVC.swift in Sources */,
 				227753A21E4B9DD6001382A6 /* AppDelegate.swift in Sources */,

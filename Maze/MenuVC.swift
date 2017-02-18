@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuVC.swift
 //  Maze
 //
 //  Created by Kryg Tomasz on 08.02.2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuVC: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
     

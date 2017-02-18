@@ -55,8 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var success = false
         if shortcutItem.type == "kryg.maze.game-board" {
             success = true
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let mainVC = main.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC
+            mainVC?.startGame()
         }
-        return true
+        return success
         
     }
     
