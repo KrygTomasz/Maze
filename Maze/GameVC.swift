@@ -25,7 +25,8 @@ class GameVC: UIViewController {
     fileprivate var collision: UICollisionBehavior!
     
     fileprivate var gravity: UIGravityBehavior!
-    fileprivate var direction = CGVector(dx: 0.0, dy: 0.0)
+    fileprivate var direction = CGVector(dx: 1.0, dy: 1.0)
+    fileprivate var directionBeforePause = CGVector(dx: 1.0, dy: 1.0)
     
     var tapGesture: UITapGestureRecognizer!
     
@@ -37,8 +38,7 @@ class GameVC: UIViewController {
         initWalls()
         initBall()
 
-        createCollisions()
-        createGravity()
+        addBehaviors()
         
         launchAccelerometer()
         
@@ -68,14 +68,10 @@ class GameVC: UIViewController {
         mainView.addSubview(ball)
         
         ball.translatesAutoresizingMaskIntoConstraints = false
-        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 5).isActive = true
-        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor, constant: 5).isActive = true
+        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 300).isActive = true
+        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor, constant: 200).isActive = true
         
         mainView.layoutIfNeeded()
-        
-        let ballBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [ball])
-        ballBehavior.allowsRotation = false
-        animator?.addBehavior(ballBehavior)
         
     }
     
@@ -85,6 +81,22 @@ class GameVC: UIViewController {
         topWall.backgroundColor = UIColor.brown
         leftWall.backgroundColor = UIColor.brown
         rightWall.backgroundColor = UIColor.brown
+        
+    }
+    
+    fileprivate func addBehaviors() {
+        
+        createBallBehavior()
+        createCollisions()
+        createGravity()
+        
+    }
+    
+    fileprivate func createBallBehavior() {
+        
+        let ballBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [ball])
+        ballBehavior.allowsRotation = false
+        animator?.addBehavior(ballBehavior)
         
     }
     
@@ -109,7 +121,7 @@ class GameVC: UIViewController {
     fileprivate func createGravity() {
         
         gravity = UIGravityBehavior(items: [ball])
-        gravity?.gravityDirection = direction
+        gravity?.gravityDirection = self.directionBeforePause
         
         animator?.addBehavior(gravity)
         
@@ -125,9 +137,9 @@ class GameVC: UIViewController {
                 self.direction.dy = CGFloat(-3*accelerometerData.acceleration.y)
                 self.gravity?.gravityDirection = self.direction
                 
-                print("X: \(accelerometerData.acceleration.x)")
-                print("Y: \(accelerometerData.acceleration.y)")
-                print("Z: \(accelerometerData.acceleration.z)")
+                //print("X: \(accelerometerData.acceleration.x)")
+                //print("Y: \(accelerometerData.acceleration.y)")
+                //print("Z: \(accelerometerData.acceleration.z)")
             }
             
             // Do any additional setup after loading the view.
@@ -137,14 +149,35 @@ class GameVC: UIViewController {
     
     fileprivate func setGesture() {
         
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(showMenu))
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(showPauseMenu))
         mainView.addGestureRecognizer(tapGesture)
         
     }
     
-    func showMenu() {
+    func showPauseMenu() {
         
-        print("Options")
+        pauseGame()
+        guard let pauseVC: PauseVC = UINib(nibName: "PauseVC", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PauseVC else { return }
+        pauseVC.modalPresentationStyle = .overCurrentContext
+        pauseVC.unpauseFunction = unpauseGame
+//        NotificationCenter.default.addObserver(self, selector: #selector(GameVC.unpauseGame), name: NSNotification.Name(rawValue: "unpauseGame"), object: nil)
+        self.present(pauseVC, animated: true, completion: nil)
+        
+    }
+    
+    func pauseGame() {
+        
+        directionBeforePause = direction
+        motionManager.stopAccelerometerUpdates()
+        animator?.removeAllBehaviors()
+        
+    }
+    
+    func unpauseGame() {
+        
+        addBehaviors()
+        print("UNPAUSED")
+        launchAccelerometer()
         
     }
 

@@ -44,10 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var success = false
         if shortcutItem.type == SHORTCUT_GAME_BOARD_ID {
-            guard let game: GameVC = UINib(nibName: "GameVC", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? GameVC else { return success }
-            success = true
+            guard
+                let game: GameVC = UINib(nibName: "GameVC", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? GameVC,
+                let navigationVC = self.window?.rootViewController as? UINavigationController else { return success }
             self.window?.makeKeyAndVisible()
-            self.window?.rootViewController?.present(game, animated: true, completion: nil)
+            navigationVC.pushViewController(game, animated: true)
+            success = true
         }
         return success
         

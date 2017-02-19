@@ -12,10 +12,10 @@ extension UICollisionBehavior {
     
     func addStaticItem(_ item: UIView, named identifier: String) {
 
-        var newX = item.frame.origin.x + 2
-        var newY = item.frame.origin.y + 2
-        var newWidth = item.frame.width - 4
-        var newHeight = item.frame.height - 4
+        var newX = item.frame.origin.x + 1
+        var newY = item.frame.origin.y + 1
+        var newWidth = item.frame.width - 2
+        var newHeight = item.frame.height - 2
         
         self.addBoundary(withIdentifier: identifier as NSCopying, for: UIBezierPath(rect: CGRect(x: newX, y: newY, width: newWidth, height: newHeight)))
         
