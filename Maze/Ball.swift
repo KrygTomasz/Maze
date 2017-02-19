@@ -20,6 +20,10 @@ class Ball: UIView {
     
     @IBOutlet weak var image: UIImageView!
     
+    override var collisionBoundsType: UIDynamicItemCollisionBoundsType {
+        return UIDynamicItemCollisionBoundsType.ellipse
+    }
+    
     func setView() {
     
         image.image = #imageLiteral(resourceName: "ball")

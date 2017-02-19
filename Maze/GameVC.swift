@@ -27,19 +27,22 @@ class GameVC: UIViewController {
     fileprivate var gravity: UIGravityBehavior!
     fileprivate var direction = CGVector(dx: 0.0, dy: 0.0)
     
+    var tapGesture: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initAnimator()
         
-        initBall()
         initWalls()
-        mainView.layoutIfNeeded()
+        initBall()
 
         createCollisions()
         createGravity()
         
         launchAccelerometer()
+        
+        setGesture()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,26 +68,23 @@ class GameVC: UIViewController {
         mainView.addSubview(ball)
         
         ball.translatesAutoresizingMaskIntoConstraints = false
-        
         ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 5).isActive = true
-
         ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor, constant: 5).isActive = true
+        
+        mainView.layoutIfNeeded()
+        
+        let ballBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [ball])
+        ballBehavior.allowsRotation = false
+        animator?.addBehavior(ballBehavior)
         
     }
     
     fileprivate func initWalls() {
         
-        
-        //let wallBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [bottomWall, topWall, leftWall, rightWall])
-        //wallBehavior.isAnchored = true
-        //wallBehavior.allowsRotation = false
-        
         bottomWall.backgroundColor = UIColor.brown
         topWall.backgroundColor = UIColor.brown
         leftWall.backgroundColor = UIColor.brown
         rightWall.backgroundColor = UIColor.brown
-        
-        //animator?.addBehavior(wallBehavior)
         
     }
     
@@ -135,6 +135,18 @@ class GameVC: UIViewController {
         
     }
     
+    fileprivate func setGesture() {
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(showMenu))
+        mainView.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    func showMenu() {
+        
+        print("Options")
+        
+    }
 
     /*
     // MARK: - Navigation
