@@ -7,10 +7,12 @@
 		<dict>
 			<key>UIApplicationShortcutItemType</key>
 			<string>kryg.maze.game-board</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Start game</string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypePlay</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Start game</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Quick start</string>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

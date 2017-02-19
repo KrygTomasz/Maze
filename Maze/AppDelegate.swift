@@ -13,17 +13,44 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let SHORTCUT_GAME_BOARD_ID = "kryg.maze.game-board"
+    
     var window: UIWindow?
-
-
+    var shortcutItem: UIApplicationShortcutItem?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let shortcutIconItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem  {
+            handleShortcut(shortcutIconItem)
+            self.shortcutItem = shortcutIconItem
+            return false;
+        }
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        
+        guard let shortcut = shortcutItem else { return }
+        handleShortcut(shortcut)
+        self.shortcutItem = nil
+        
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print("Start game shortcut tapped")
+        completionHandler(handleShortcut(shortcutItem))
+    }
+    
+    func handleShortcut(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        var success = false
+        if shortcutItem.type == SHORTCUT_GAME_BOARD_ID {
+            guard let game: GameVC = UINib(nibName: "GameVC", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? GameVC else { return success }
+            success = true
+            self.window?.makeKeyAndVisible()
+            self.window?.rootViewController?.present(game, animated: true, completion: nil)
+        }
+        return success
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -43,24 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
-    }
-
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        print("Start game shortcut tapped")
-        completionHandler(handleShortcut(shortcutItem))
-    }
-    
-    func handleShortcut(_ shortcutItem: UIApplicationShortcutItem)->Bool {
-        
-        var success = false
-        if shortcutItem.type == "kryg.maze.game-board" {
-            success = true
-            let main = UIStoryboard(name: "Main", bundle: nil)
-            let mainVC = main.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC
-            mainVC?.startGame()
-        }
-        return success
-        
     }
     
     // MARK: - Core Data stack
