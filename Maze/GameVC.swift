@@ -66,12 +66,14 @@ class GameVC: UIViewController {
         
         ball.translatesAutoresizingMaskIntoConstraints = false
         
-        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor).isActive = true
-        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor).isActive = true
+        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 5).isActive = true
+
+        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor, constant: 5).isActive = true
         
     }
     
     fileprivate func initWalls() {
+        
         
         //let wallBehavior: UIDynamicItemBehavior = UIDynamicItemBehavior(items: [bottomWall, topWall, leftWall, rightWall])
         //wallBehavior.isAnchored = true
@@ -88,11 +90,17 @@ class GameVC: UIViewController {
     
     fileprivate func createCollisions() {
         
-        collision = UICollisionBehavior(items: [ball, bottomWall, topWall, leftWall, rightWall])
-        collision.addBoundary(withIdentifier: "bottomWall" as NSCopying, for: UIBezierPath(rect: bottomWall.frame))
-        collision.addBoundary(withIdentifier: "topWall" as NSCopying, for: UIBezierPath(rect: topWall.frame))
-        collision.addBoundary(withIdentifier: "leftWall" as NSCopying, for: UIBezierPath(rect: leftWall.frame))
-        collision.addBoundary(withIdentifier: "rightWall" as NSCopying, for: UIBezierPath(rect: rightWall.frame))
+        collision = UICollisionBehavior(items: [ball])
+        collision.addStaticItem(bottomWall, named: "bottomWall")
+        collision.addStaticItem(topWall, named: "topWall")
+        collision.addStaticItem(rightWall, named: "rightWall")
+        collision.addStaticItem(leftWall, named: "leftWall")
+
+        let wall1 = Wall()
+        wall1.setView(frame: CGRect(x: 100, y: 100, width: 100, height: 100), named: "wall1")
+        mainView.addSubview(wall1)
+        collision.addStaticItem(wall1, named: wall1.id)
+        
         collision?.translatesReferenceBoundsIntoBoundary = true
         animator?.addBehavior(collision)
     

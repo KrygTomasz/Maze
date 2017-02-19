@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223B22D71E59B8BE00829962 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B22D61E59B8BE00829962 /* Wall.swift */; };
+		223B22D91E59D78100829962 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B22D81E59D78100829962 /* Extensions.swift */; };
 		227753A21E4B9DD6001382A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A11E4B9DD6001382A6 /* AppDelegate.swift */; };
 		227753A41E4B9DD6001382A6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A31E4B9DD6001382A6 /* MenuVC.swift */; };
 		227753A71E4B9DD6001382A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227753A51E4B9DD6001382A6 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		223B22D61E59B8BE00829962 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		223B22D81E59D78100829962 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2277539E1E4B9DD6001382A6 /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227753A11E4B9DD6001382A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227753A31E4B9DD6001382A6 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223B22DA1E59D79000829962 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				223B22D81E59D78100829962 /* Extensions.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		227753951E4B9DD6001382A6 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 		227753A01E4B9DD6001382A6 /* Maze */ = {
 			isa = PBXGroup;
 			children = (
+				223B22DA1E59D79000829962 /* Tools */,
 				227753A11E4B9DD6001382A6 /* AppDelegate.swift */,
 				227753A31E4B9DD6001382A6 /* MenuVC.swift */,
 				227753A51E4B9DD6001382A6 /* Main.storyboard */,
@@ -118,6 +131,7 @@
 				22CFB5E61E4BA7C200BBD032 /* GameVC.xib */,
 				22CFB5E91E4BAA6700BBD032 /* Ball.swift */,
 				22CFB5EB1E4BAA7400BBD032 /* Ball.xib */,
+				223B22D61E59B8BE00829962 /* Wall.swift */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -280,10 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				227753AA1E4B9DD6001382A6 /* Maze.xcdatamodeld in Sources */,
+				223B22D71E59B8BE00829962 /* Wall.swift in Sources */,
 				227753A41E4B9DD6001382A6 /* MenuVC.swift in Sources */,
 				22CFB5EA1E4BAA6700BBD032 /* Ball.swift in Sources */,
 				22CFB5E71E4BA7C200BBD032 /* GameVC.swift in Sources */,
 				227753A21E4B9DD6001382A6 /* AppDelegate.swift in Sources */,
+				223B22D91E59D78100829962 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
