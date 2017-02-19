@@ -25,8 +25,8 @@ class GameVC: UIViewController {
     fileprivate var collision: UICollisionBehavior!
     
     fileprivate var gravity: UIGravityBehavior!
-    fileprivate var direction = CGVector(dx: 1.0, dy: 1.0)
-    fileprivate var directionBeforePause = CGVector(dx: 1.0, dy: 1.0)
+    fileprivate var direction = CGVector(dx: 0.0, dy: 0.0)
+    fileprivate var directionBeforePause = CGVector(dx: 0.0, dy: 0.0)
     
     var tapGesture: UITapGestureRecognizer!
     
@@ -68,8 +68,8 @@ class GameVC: UIViewController {
         mainView.addSubview(ball)
         
         ball.translatesAutoresizingMaskIntoConstraints = false
-        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 300).isActive = true
-        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor, constant: 200).isActive = true
+        ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 5).isActive = true
+        ball.leftAnchor.constraint(equalTo: leftWall.rightAnchor, constant: 5).isActive = true
         
         mainView.layoutIfNeeded()
         
@@ -160,7 +160,7 @@ class GameVC: UIViewController {
         guard let pauseVC: PauseVC = UINib(nibName: "PauseVC", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PauseVC else { return }
         pauseVC.modalPresentationStyle = .overCurrentContext
         pauseVC.unpauseFunction = unpauseGame
-//        NotificationCenter.default.addObserver(self, selector: #selector(GameVC.unpauseGame), name: NSNotification.Name(rawValue: "unpauseGame"), object: nil)
+        pauseVC.quitFunction = backToMenu
         self.present(pauseVC, animated: true, completion: nil)
         
     }
@@ -178,6 +178,12 @@ class GameVC: UIViewController {
         addBehaviors()
         print("UNPAUSED")
         launchAccelerometer()
+        
+    }
+    
+    func backToMenu() {
+        
+        let _ = self.navigationController?.popViewController(animated: true)
         
     }
 

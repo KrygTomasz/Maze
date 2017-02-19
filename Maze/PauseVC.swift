@@ -15,6 +15,7 @@ class PauseVC: UIViewController {
     @IBOutlet weak var quitButton: UIButton!
     
     var unpauseFunction: (() -> ())!
+    var quitFunction: (() -> ())!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,21 +35,32 @@ class PauseVC: UIViewController {
     fileprivate func setView() {
         
         contentView.backgroundColor  = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
-        print("ViewSET")
         setButtons()
         
     }
     
     fileprivate func setButtons() {
         
+        resumeButton.setTitle("Resume", for: .normal)
         resumeButton.addTarget(self, action: #selector(unpause), for: .touchUpInside)
+        resumeButton.tintColor = UIColor.brown
+        
+        quitButton.setTitle("Quit", for: .normal)
+        quitButton.addTarget(self, action: #selector(quit), for: .touchUpInside)
+        quitButton.tintColor = UIColor.brown
         
     }
 
     func unpause() {
         
         dismiss(animated: true, completion: unpauseFunction)
-        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "unpauseGame"), object: nil)
+        
+    }
+    
+    func quit() {
+        
+        dismiss(animated: true, completion: quitFunction)
+        
     }
     /*
     // MARK: - Navigation
