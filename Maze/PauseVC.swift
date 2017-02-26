@@ -44,10 +44,12 @@ class PauseVC: UIViewController {
         resumeButton.setTitle("Resume", for: .normal)
         resumeButton.addTarget(self, action: #selector(unpause), for: .touchUpInside)
         resumeButton.tintColor = UIColor.brown
+        resumeButton.setImage(#imageLiteral(resourceName: "Resume"), for: .normal)
         
         quitButton.setTitle("Quit", for: .normal)
         quitButton.addTarget(self, action: #selector(quit), for: .touchUpInside)
         quitButton.tintColor = UIColor.brown
+        quitButton.setImage(#imageLiteral(resourceName: "Quit"), for: .normal)
         
     }
 

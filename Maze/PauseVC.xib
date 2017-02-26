@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,15 +20,17 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJN-Jx-U8i">
-                        <rect key="frame" x="164" y="234" width="46" height="60"/>
+                        <rect key="frame" x="107" y="234" width="160" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="bDt-aS-SsC"/>
+                            <constraint firstAttribute="width" constant="160" id="keR-0p-fkS"/>
                         </constraints>
                         <state key="normal" title="Button"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8X-21-S24">
-                        <rect key="frame" x="164" y="328" width="46" height="60"/>
+                        <rect key="frame" x="107" y="328" width="160" height="60"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="160" id="bIs-n3-6n9"/>
                             <constraint firstAttribute="height" constant="60" id="xik-uc-G5B"/>
                         </constraints>
                         <state key="normal" title="Button"/>
@@ -37,12 +38,10 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="aJN-Jx-U8i" secondAttribute="trailing" constant="149" id="0Sb-G8-8Es"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="e8X-21-S24" secondAttribute="trailing" constant="149" id="7ak-mY-K1j"/>
+                    <constraint firstItem="aJN-Jx-U8i" firstAttribute="centerX" secondItem="h1t-li-ssR" secondAttribute="centerX" id="8Od-g5-dJB"/>
                     <constraint firstItem="aJN-Jx-U8i" firstAttribute="top" secondItem="sua-cf-gcC" secondAttribute="bottom" constant="214" id="8tG-oH-l6Y"/>
                     <constraint firstItem="e8X-21-S24" firstAttribute="top" secondItem="aJN-Jx-U8i" secondAttribute="bottom" constant="34" id="awd-NN-5YD"/>
-                    <constraint firstItem="e8X-21-S24" firstAttribute="leading" secondItem="h1t-li-ssR" secondAttribute="leadingMargin" constant="148" id="frL-dS-Akc"/>
-                    <constraint firstItem="aJN-Jx-U8i" firstAttribute="leading" secondItem="h1t-li-ssR" secondAttribute="leadingMargin" constant="148" id="gpy-oJ-ghc"/>
+                    <constraint firstItem="e8X-21-S24" firstAttribute="centerX" secondItem="h1t-li-ssR" secondAttribute="centerX" id="m7Z-6n-oo0"/>
                 </constraints>
             </view>
             <connections>
