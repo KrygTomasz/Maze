@@ -65,7 +65,9 @@ class GameVC: UIViewController {
         guard let ballObject: Ball = UINib(nibName: "Ball", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? Ball else { return }
         self.ball = ballObject
         ball.setView()
+        ViewTools.addShadow(to: ball)
         mainView.addSubview(ball)
+        mainView.sendSubview(toBack: ball)
         
         ball.translatesAutoresizingMaskIntoConstraints = false
         ball.topAnchor.constraint(equalTo: topWall.bottomAnchor, constant: 5).isActive = true
@@ -76,11 +78,21 @@ class GameVC: UIViewController {
     }
     
     fileprivate func initWalls() {
-        
+
         bottomWall.backgroundColor = UIColor.brown
         topWall.backgroundColor = UIColor.brown
         leftWall.backgroundColor = UIColor.brown
         rightWall.backgroundColor = UIColor.brown
+        
+        var bp = UIBezierPath()
+        bp.move(to: CGPoint(x: 0, y: 0))
+        bp.addLine(to: CGPoint(x: 50, y: 0))
+        bp.addLine(to: CGPoint(x: 50, y: 50))
+        bp.addLine(to: CGPoint(x: 0, y: 50))
+        bp.addLine(to: CGPoint(x: 0, y: 0))
+        mainView.layer.shadowPath = bp.cgPath
+        mainView.layer.shadowRadius = 5
+        mainView.layer.shadowOpacity = 1
         
     }
     

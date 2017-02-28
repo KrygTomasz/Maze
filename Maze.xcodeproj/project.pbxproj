@@ -11,6 +11,7 @@
 		223B22D91E59D78100829962 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B22D81E59D78100829962 /* Extensions.swift */; };
 		223B22DD1E5A029A00829962 /* PauseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B22DB1E5A029A00829962 /* PauseVC.swift */; };
 		223B22DE1E5A029A00829962 /* PauseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223B22DC1E5A029A00829962 /* PauseVC.xib */; };
+		223E0F5C1E660538000E3ECC /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E0F5B1E660538000E3ECC /* ViewTools.swift */; };
 		227753A21E4B9DD6001382A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A11E4B9DD6001382A6 /* AppDelegate.swift */; };
 		227753A41E4B9DD6001382A6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227753A31E4B9DD6001382A6 /* MenuVC.swift */; };
 		227753A71E4B9DD6001382A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227753A51E4B9DD6001382A6 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		223B22D81E59D78100829962 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		223B22DB1E5A029A00829962 /* PauseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseVC.swift; sourceTree = "<group>"; };
 		223B22DC1E5A029A00829962 /* PauseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PauseVC.xib; sourceTree = "<group>"; };
+		223E0F5B1E660538000E3ECC /* ViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTools.swift; sourceTree = "<group>"; };
 		2277539E1E4B9DD6001382A6 /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227753A11E4B9DD6001382A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227753A31E4B9DD6001382A6 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				223B22D81E59D78100829962 /* Extensions.swift */,
+				223E0F5B1E660538000E3ECC /* ViewTools.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223E0F5C1E660538000E3ECC /* ViewTools.swift in Sources */,
 				227753AA1E4B9DD6001382A6 /* Maze.xcdatamodeld in Sources */,
 				223B22D71E59B8BE00829962 /* Wall.swift in Sources */,
 				227753A41E4B9DD6001382A6 /* MenuVC.swift in Sources */,
